@@ -1,0 +1,10 @@
+<!-- <p>Are you sure you want to remove this user</p> -->
+<p>{{ msg }}</p>
+<div class="d-flex justify-content-between">
+  <button (click)="onConfirm(true)" mat-raised-button color="primary">
+    Confirm
+  </button>
+  <button (click)="onConfirm(false)" mat-raised-button color="warn">
+    Cancel
+  </button>
+</div>

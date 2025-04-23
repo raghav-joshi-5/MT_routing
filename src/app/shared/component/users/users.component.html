@@ -1,0 +1,23 @@
+<div class="row mt-4">
+  <div class="col-md-12 text-right">
+    <button routerLink="adduser" mat-raised-button color="accent">
+      Add User
+    </button>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-4 offset-md-4">
+    <ul class="list-group" *ngIf="userObj.length > 0; else noUser">
+      <li
+        [routerLink]="user.userId"
+        *ngFor="let user of userObj"
+        class="list-group-item bg-secondary text-white"
+      >
+        {{ user.userName }}
+      </li>
+    </ul>
+    <ng-template #noUser>
+      <p class="alert alert-danger">No user Available</p>
+    </ng-template>
+  </div>
+</div>

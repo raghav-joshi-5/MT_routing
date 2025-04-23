@@ -1,0 +1,23 @@
+<div class="row mt-4">
+  <div class="col-md-12 text-right">
+    <button routerLink="addproduct" mat-raised-button color="accent">
+      Add Product
+    </button>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-4 offset-md-4">
+    <ul class="list-group" *ngIf="prodObj.length > 0; else noProd">
+      <li
+        [routerLink]="prod.pid"
+        *ngFor="let prod of prodObj"
+        class="list-group-item bg-secondary text-white"
+      >
+        {{ prod.pname }}
+      </li>
+    </ul>
+    <ng-template #noProd>
+      <p class="alert alert-danger">No product Available</p>
+    </ng-template>
+  </div>
+</div>
